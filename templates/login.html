@@ -17,7 +17,7 @@
           </div>
           <div class="modal-body">
               <form action="/login" method=post class="form col-md-12 center-block">
-                {% if error %}<p>{{error}}</p>{% endif %}
+                {% if error %}<p class="error">{{error}}</p>{% endif %}
                 <div class="form-group">
                   <input type="text" name="email" class="form-control input-lg" placeholder="Email">
                 </div>
