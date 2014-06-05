@@ -8,6 +8,7 @@ $(document).ready(function() {
 	    data: {id: id, answer: "Aceito"}
 	  }).done(function(data){
 	  	alert(data.return);
+	  	$('#status_' + id).text("Aceito");
 	  });
     });
 
@@ -20,6 +21,7 @@ $(document).ready(function() {
 	    data: {id: id, answer: "Rejeitado"}
 	  }).done(function(data){
 	  	alert(data.return);
+	  	$('#status_' + id).text("Rejeitado");
 	  });
     });
 });

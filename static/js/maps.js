@@ -10,8 +10,11 @@ function initialize() {
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(-22.9533, -43.341259);
+      // var pos = new google.maps.LatLng(-22.853692, -43.2258092);
+      // var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
       updatePlaces(-22.9533, -43.341259);
+      // updatePlaces(-22.853692, -43.2258092);
       // updatePlaces(position.coords.latitude, position.coords.longitude);
       map.setCenter(pos);
 
@@ -29,8 +32,12 @@ function initialize() {
 }
 
 function setUp(results){
-  for (var i = 0; i < results.length; i++) {
-    createMarker(results[i]);
+  if( Object.prototype.toString.call( results ) === '[object Array]' ){
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }else{
+    createMarker(results)
   }
 }
 

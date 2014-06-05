@@ -76,6 +76,9 @@ def logged():
 			restaurant.description = description
 			restaurant.featureReservation = reservation
 			restaurant.featureMenu = menu
+			session['Restaurant']['description'] = description
+			session['Restaurant']['featureMenu'] = menu
+			session['Restaurant']['featureReservation'] = reservation
 			message = "Atualizado com sucesso"
 		else:
 			message = "Não foi possível atualizar o restaurante"
